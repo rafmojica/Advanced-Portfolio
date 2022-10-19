@@ -778,6 +778,9 @@ footer {
   .modal__half {
     width: 100%;
   }
+  .shapes {
+    display: none;
+  }
 }
 
 /* SMALL PHONES */
@@ -809,5 +812,58 @@ footer {
   }
   .modal__half {
     padding: 40px;
+  }
+}
+
+/* IPHONE 12 PRO */
+
+@media (max-height: 900px) {
+  .modal__contact {
+    height: 50vh;
+    justify-content: start;
+    padding: 20px;
+  }
+  .modal__exit {
+    top: 20px;
+    right: 30px;
+  }
+  #contact__form {
+    height: 50%;
+  }
+  #contact__submit {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+  }
+  .form__submit {
+    font-size: 12px;
+    max-width: 80px;
+    padding: 8px 12px;
+  }
+  .form__item {
+    height: 60px;
+  }
+  .modal__about {
+    height: 50vh;
+  }
+  .modal__link--header,
+  .modal__link--wrapper {
+    display: none;
+  }
+}
+
+/* IPHONE SE */
+
+@media (max-height: 667px) {
+  .modal__about {
+    display: none;
+  }
+  .modal__contact {
+    height: 100vh;
+  }
+  #contact__submit {
+    position: absolute;
+    bottom: 228px;
+    right: inherit;
   }
 }
