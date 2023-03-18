@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafael Mojica</title>
+    <script
+      src="https://kit.fontawesome.com/fd56eb3ace.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("NmOZsGVWvW2XGlT8q");
+      })();
+    </script>
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure class="img__container">
+          <img
+            id="personal-logo"
+            src="./assets/logo (bold monsterrat).svg"
+            alt=""
+          />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a
+              href="#"
+              onclick="toggleModal()"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click-hover">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            >
+              <i class="fa-solid fa-moon" onclick="toggleContrast()"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title"><span class="blue">I'm Rafa.</span></h1>
+          <p class="header__para header__para--outline">
+            I'm a <span class="blue">Frontend Software Engineer</span> with a
+            strong passion for building world class web applications with
+            excellent user experiences.
+            <br />
+            Here's a bit more
+            <span class="blue click-hover" onclick="toggleModal()"
+              >about me</span
+            >.
+          </p>
+          <div class="social__list">
+            <a href="#" class="social__link click-hover">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/rafmojica"
+              target="_blank"
+              class="social__link click-hover"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" class="social__link click-hover">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+        <button class="mail__btn click-hover" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click-hover scroll__outline"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h2 class="modal__title modal__title--black">
+            Here's a bit about me.
+          </h2>
+          <h5 class="modal__sub-title modal__sub-title--black">
+            Frontend Software Engineer.
+          </h5>
+          <p class="modal__para">
+            I'm a hardworking
+            <span class="blue">frontend software engineer</span> seeking
+            employment. Ready to utilize my skills in
+            <span class="blue">web development</span> to create great user
+            experiences and further my skills.
+            <!-- <br />
+            I currently work on extremely difficult engineering problems and
+            learn from a team consisting of some of the most talented and
+            experienced developers every day. -->
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language--wrapper">
+              <img
+                class="modal__language"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure id="css" class="modal__language--wrapper">
+              <img
+                class="modal__language"
+                src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
+                alt=""
+              />
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language--wrapper">
+              <img
+                class="modal__language"
+                src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+                alt=""
+              />
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language--wrapper">
+              <img
+                class="modal__language"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt=""
+              />
+              <span class="language__name">React</span>
+            </figure>
+          </div>
+          <h5 class="modal__link--header">
+            My <span class="blue">resume:</span>
+          </h5>
+          <figure class="modal__link--wrapper">
+            <a href="#" class="modal__link click-hover">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </figure>
+        </div>
+        <div class="modal__half modal__contact">
+          <i
+            class="fas fa-times modal__exit click-hover"
+            onclick="toggleModal()"
+          ></i>
+          <h2 class="modal__title modal__title--contact">Let's have a chat!</h2>
+          <h5 class="modal__sub-title modal__sub-title--contact">
+            I'm currently open to new opportunities.
+          </h5>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea
+                class="input"
+                name="message"
+                type="text"
+                required
+              ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for reaching out! Looking forward to speaking with you soon.
+          </div>
+        </div>
+      </div>
+      <div class="shapes">
+        <img src="./assets/blob.svg" class="shape shape--0" />
+        <img src="./assets/blob (1).svg" class="shape shape--1" />
+        <img src="./assets/blob (2).svg" class="shape shape--2" />
+        <img src="./assets/blob (3).svg" class="shape shape--3" />
+        <img src="./assets/blob (2).svg" class="shape shape--4" />
+        <img src="./assets/blob (1).svg" class="shape shape--5" />
+        <img src="./assets/blob.svg" class="shape shape--6" />
+        <img src="./assets/blob (3).svg" class="shape shape--7" />
+        <img src="./assets/blob (1).svg" class="shape shape--8" />
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="blue">projects.</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <figure class="project__img--wrapper">
+                  <img
+                    src="./assets/Ecommerce Library Mockup.png"
+                    class="project__img"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/Ecommerce Library Mockup (no title).png"
+                    alt=""
+                    class="project__img--no-title"
+                  />
+                </figure>
+                <div class="project__wrapper--bg">
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Ecommerce Library
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, JavaScript
+                    </h4>
+                    <p class="project__description--para">
+                      This was one of my first projects after messing around
+                      with HTML & CSS. The hardest part of this project was
+                      arranging the books because I was still new to using
+                      Flexbox.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/rafmojica/Ecommerce-Library/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://rafmojica.github.io/Ecommerce-Library/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <figure class="project__img--wrapper">
+                  <img
+                    src="./assets/Treact Mockup.gif"
+                    class="project__img"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/Treact Mockup (no title).gif"
+                    alt=""
+                    class="project__img--no-title"
+                  />
+                </figure>
+                <div class="project__wrapper--bg">
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Treact Website Clone
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, JavaScript
+                    </h4>
+                    <p class="project__description--para">
+                      This was one of the most difficult projects I've made so
+                      far. It took me around a week to finish it to try and
+                      replicate as much as I can with my own knowledge.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/rafmojica/Treact-Website-Recreation-/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://rafmojica.github.io/Treact-Website-Recreation-/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <figure class="project__img--wrapper">
+                  <img
+                    src="./assets/Howard Portfolio Mockup.gif"
+                    class="project__img"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/Howard Portfolio Mockup (no title).gif"
+                    alt=""
+                    class="project__img--no-title"
+                  />
+                </figure>
+                <div class="project__wrapper--bg">
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Howard Hamlin's Portfolio
+                    </h3>
+                    <h4 class="project__description--sub-title">HTML, CSS</h4>
+                    <p class="project__description--para">
+                      Decided to have some fun using my HTML & CSS skills.
+                      Howard Hamlin is a fictional character from my 2nd
+                      favorite show, Better Call Saul. He is one of the owners
+                      and CEO of HHM, and a great lawyer.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/rafmojica/Howard-s-Portfolio"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://rafmojica.github.io/Howard-s-Portfolio/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <figure class="project__img--wrapper">
+                  <img
+                    src="./assets/Studio Ghibli Mockup.png"
+                    class="project__img"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/Studio Ghibli Mockup.png"
+                    alt=""
+                    class="project__img--no-title"
+                  />
+                </figure>
+                <div class="project__wrapper--bg">
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Studio Ghibli Directory
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, JavaScript
+                    </h4>
+                    <p class="project__description--para">
+                      My first project using an API! I decided to use a public
+                      Studio Ghibli API because I love their movies.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/rafmojica/Ghibli-Films"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://ghibli-films-ten.vercel.app/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <figure class="project__img--wrapper">
+                  <img
+                    src="./assets/BoTW Compendium Mockup.png"
+                    class="project__img"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/BoTW Compendium Mockup.png"
+                    alt=""
+                    class="project__img--no-title"
+                  />
+                </figure>
+                <div class="project__wrapper--bg">
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Breath of The Wild Compendium
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, Tailwind, JavaScript, React
+                    </h4>
+                    <p class="project__description--para">
+                      My first React project on my own! It was also my first
+                      time using Tailwind. Since Breath of The Wild is my
+                      favorite video game, why not dedicate a website about it?
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/rafmojica/botw-compendium/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://botw-compendium-two.vercel.app/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img
+              id="personal-logo"
+              src="./assets/logo (bold montserrat on black bg).svg"
+              alt=""
+            />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >GitHub</a
+            >
+            <a
+              href=""
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >LinkedIn</a
+            >
+            <a
+              href="#"
+              onclick="toggleModal()"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Email</a
+            >
+            <a
+              href=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Resume</a
+            >
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2022 Rafael Mojica
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
