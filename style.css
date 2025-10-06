@@ -806,6 +806,7 @@ footer {
   .modal__contact {
     height: 480px !important;
     padding-bottom: 300px !important;
+    margin-top: 10%;
   }
   #contact__submit {
     bottom: -270px !important;
@@ -841,12 +842,13 @@ footer {
 
 /* IPHONE 12 PRO */
 
-@media (max-height: 900px) {
+@media (max-height: 1000px) {
   .modal {
     height: 600px;
   }
   .modal__contact {
     padding: 40px;
+    margin-top: 0;
   }
   .modal__exit {
     top: 20px;
